@@ -48,8 +48,51 @@ public class Lista<T>{
     }
 
     public void imprimeLista(){
-        
+
+        if(primeiroNo == null){
+            System.out.println("Lista vazia!");
+        } else{
+            System.out.println("Dados da Lista " + getNomeLista());
+            No<T> aux = primeiroNo;
+            while (aux != null) {
+                System.out.println(aux.toString());
+                aux = aux.getNextNo();
+            }
+        }
     }
+
+    public void addFinal(T dado){
+        No<T> novoNo = new No<T>(dado);
+        if(primeiroNo == null){
+            primeiroNo = novoNo;
+            ultimoNo = novoNo;
+        }else{
+            ultimoNo.setNextNo(novoNo);
+            ultimoNo = novoNo;
+        }
+    }
+    public void excluirFinal(){
+        if(ultimoNo== null){
+          System.out.println("Lista vazia!");
+        } else{
+            System.out.println("Dado:"  + ultimoNo.getDado());
+            if(primeiroNo == ultimoNo){
+                primeiroNo = primeiroNo.getNextNo();
+                ultimoNo = ultimoNo.getNextNo(); 
+            }else{
+                No<T> aux = primeiroNo;
+
+                while(aux.getNextNo() != ultimoNo) {
+                    aux = aux.getNextNo();
+                }
+                ultimoNo = aux;
+                aux.setNextNo(null);
+            }
+        }
+    }
+
+
+
 
     public String getNomeLista(){
         return this.nomeLista;

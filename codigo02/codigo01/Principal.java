@@ -8,5 +8,6 @@ public class Principal{
         lista.addInicio("Danielly");
 
         lista.excluirInicio();
+        lista.addFinal("Gabriela");
     }
 }
