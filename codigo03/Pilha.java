@@ -15,7 +15,43 @@ public class Pilha<T> {
         this.topo = null;
     }
     
+    public void push(T dado){
+        No <T> novoNo = new No<T> (dado);
+        if (topo == null){
+            topo=novoNo;
+        }else{
+            novoNo.setNextNo(topo);
+            topo = novoNo;
 
+        }
+    }
+    public void imprimePilha(T dado){
+     No <T> aux = topo;
+     while (aux != null) {
+        System.out.println(aux.toString());
+        aux = aux.getNextNo();
+     }
+    }
+
+     public T pop(){
+        if (topo== null){
+            System.out.println("Pilha vazia");
+            return null;
+        }else{
+        T dado = topo.getDado();  
+        topo = topo.getNextNo();
+        return dado;
+        }
+     }
+     public T peek(){
+        if(topo == null){
+            System.out.println("Pilha vazia");
+        }else{
+            
+            return dado;
+        }
+
+     }
 
 /****************************************************** */
     public String getNomePilha() {
@@ -35,3 +71,5 @@ public class Pilha<T> {
 }
 
 /***************************************************************** */
+
+
