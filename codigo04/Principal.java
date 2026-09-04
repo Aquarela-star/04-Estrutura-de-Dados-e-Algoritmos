@@ -1,8 +1,11 @@
 public class Principal{
     public static void main(String[] args){
-        Fila<String> pilha = new
-        Fila<String>("Letras");
+        Fila<Integer> fila = new Fila<Integer>("Números Inteiros");
+
+        fila.enfileirar(1);
+        fila.enfileirar(2);
+        fila.enfileirar(3);
+        fila.imprimefila();
 
     }
 }
-
