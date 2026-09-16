@@ -1,5 +1,6 @@
 package codigo05;
 
+
 public class NoDuplo<T> {
 
     private T dado;
@@ -10,10 +11,9 @@ public class NoDuplo<T> {
     public NoDuplo(T dado){
         this.dado = dado;
         this.indice = 0;
-        this.anteriorNo=null;
-        this.proximoNo= null;
+        this.anteriorNo = null;
+        this.proximoNo = null;
     }
-
 
     public void setDado(T dado){
         this.dado = dado;
@@ -30,20 +30,25 @@ public class NoDuplo<T> {
     public int getIndice(){
         return this.indice;
     }
-     public void setAnteriorNo(NoDuplo<T> anteriorNo){
+
+    public void setAnteriorNo(NoDuplo<T> anteriorNo){
         this.anteriorNo = anteriorNo;
     }
-    public int getAnteriorNo(){
+
+    public NoDuplo<T> getAnteriorNo(){
         return this.anteriorNo;
     }
+
     public void setProximoNo(NoDuplo<T> proximoNo){
         this.proximoNo = proximoNo;
     }
-    public int getProximoNo(){
+
+    public NoDuplo<T> getProximoNo(){
         return this.proximoNo;
     }
-    @Override
+
+    @Override 
     public String toString(){
-        return "Dado{ "+ getIndice() + "}";
-    }
+        return "{ indice: " + getIndice() + "| Dado: " + getDado() + "}";
+    }    
 }
