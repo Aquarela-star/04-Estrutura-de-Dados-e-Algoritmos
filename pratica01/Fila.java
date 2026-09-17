@@ -1,5 +1,3 @@
-package codigo04;
-
 public class Fila<T>{
     private String nomeFila;
     private No<T> primeiroNo;
@@ -29,17 +27,16 @@ public class Fila<T>{
 
     public T desenfileirar(){
         if(primeiroNo == null){
-            System.out.println("Fila vazia!");
+            System.out.println("Fila Vazia");
             return null;
         }
-        T dado = primeiroNo.getDado();
+        T dadoTemp = primeiroNo.getDado();
         primeiroNo = primeiroNo.getNextNo();
-
         if(primeiroNo == null){
-            ultimoNo = primeiroNo;
+           ultimoNo = null;
         }
-        return dado;
-    }
+        return dadoTemp;
+        }
 
     public void imprimeFila(){
         if(primeiroNo == null){
